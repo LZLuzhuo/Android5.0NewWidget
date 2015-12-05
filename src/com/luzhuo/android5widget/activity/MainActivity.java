@@ -38,13 +38,15 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		Intent intent;
 		switch (v.getId()) {
 		case R.id.ToolBar:
-			Intent intent = new Intent(this, ToolBarDemo.class);
+			intent = new Intent(this, ToolBarDemo.class);
 			startActivity(intent);
 			break;
 		case R.id.CardView:
-			System.out.println("CardView");
+			intent = new Intent(this, CardViewDemo.class);
+			startActivity(intent);
 			break;
 		case R.id.RecyclerView:
 			System.out.println("RecyclerView");

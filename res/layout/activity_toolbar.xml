@@ -12,7 +12,6 @@
         android:layout_weight="1"
         android:background="#03A9F4"
         app:contentInsetStart="0dp"
-        app:maxButtonHeight="0dp"
         app:titleTextColor="#ffffff" >
 
         <RelativeLayout
