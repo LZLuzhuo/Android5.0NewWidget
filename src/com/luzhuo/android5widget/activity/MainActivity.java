@@ -1,6 +1,11 @@
-package com.luzhuo.android5widget;
+package com.luzhuo.android5widget.activity;
+
+import com.luzhuo.android5widget.R;
+import com.luzhuo.android5widget.R.id;
+import com.luzhuo.android5widget.R.layout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -35,7 +40,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.ToolBar:
-			System.out.println("ToolBar");
+			Intent intent = new Intent(this, ToolBarDemo.class);
+			startActivity(intent);
 			break;
 		case R.id.CardView:
 			System.out.println("CardView");
