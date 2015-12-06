@@ -24,6 +24,7 @@
         </activity>
         <activity android:name="com.luzhuo.android5widget.activity.ToolBarDemo"/>
         <activity android:name="com.luzhuo.android5widget.activity.CardViewDemo"/>
+        <activity android:name="com.luzhuo.android5widget.activity.RecyclerViewDemo"/>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -49,7 +50,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.RecyclerView:
-			System.out.println("RecyclerView");
+			intent = new Intent(this, RecyclerViewDemo.class);
+			startActivity(intent);
 			break;
 		case R.id.SwipeRefreshLayout:
 			System.out.println("SwipeRefreshLayout");
