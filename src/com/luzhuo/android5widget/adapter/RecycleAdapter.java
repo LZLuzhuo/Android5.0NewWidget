@@ -3,16 +3,20 @@ package com.luzhuo.android5widget.adapter;
 import com.luzhuo.android5widget.R;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
 	String[] contents = new String[]{"纵向列表","横向列表","纵向网格","横向网格","纵向瀑布流","横向瀑布流"};
 	private Context context;
+	private OnItemClickListener onItemClickListener;
 
 	public RecycleAdapter(Context context) {
 		this.context = context;
@@ -21,12 +25,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
 	@Override
 	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_recycle_menu, parent, false);
-        return new ListHolder(view);
+        return new RecyclerHolder(view);
 	}
 
 	@Override
 	public void onBindViewHolder(ViewHolder holder, int position) {
-		((ListHolder) holder).setData(position);
+		((RecyclerHolder) holder).setData(position);
 	}
 
 	@Override
@@ -34,16 +38,34 @@ public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
 		return contents.length;
 	}
 	
-	class ListHolder extends RecyclerView.ViewHolder{
-		private TextView content;
+	public class RecyclerHolder extends RecyclerView.ViewHolder implements OnClickListener{
+		public TextView content;
+		public int position;
+		private CardView cardview;
 
-		public ListHolder(View itemView) {
+		public RecyclerHolder(View itemView) {
 			super(itemView);
-			content = (TextView) itemView.findViewById(R.id.content);
+			content = (TextView) itemView.findViewById(R.id.item_content);
+			cardview = (CardView) itemView.findViewById(R.id.item_cardview);
+			cardview.setOnClickListener(this);
 		}
 		
 		public void setData(int position) {
+			this.position = position;
 			content.setText(contents[position]);
         }
+
+		@Override
+		public void onClick(View v) {
+			if(onItemClickListener != null) onItemClickListener.onItemClick(this, position);
+		}
 	}
+	
+	public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+		this.onItemClickListener = onItemClickListener;
+	}
+	
+    public static interface OnItemClickListener {
+        void onItemClick(RecyclerHolder recyclerHolder, int position);
+    }
 }

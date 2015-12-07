@@ -4,9 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.OnItemTouchListener;
+import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.view.MotionEvent;
 
 import com.luzhuo.android5widget.R;
 import com.luzhuo.android5widget.adapter.RecycleAdapter;
+import com.luzhuo.android5widget.adapter.RecycleAdapter.OnItemClickListener;
+import com.luzhuo.android5widget.adapter.RecycleAdapter.RecyclerHolder;
+import com.luzhuo.android5widget.utils.Utils;
 
 /**
  * =================================================
@@ -42,6 +48,14 @@ public class RecyclerViewDemo extends Activity {
 		LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 		layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 		recycle.setLayoutManager(layoutManager);
-		recycle.setAdapter(new RecycleAdapter(this));
+		RecycleAdapter adapter = new RecycleAdapter(this);
+		recycle.setAdapter(adapter);
+		
+		adapter.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(RecyclerHolder recyclerHolder, int position) {
+				Utils.showQuickToast(RecyclerViewDemo.this, "position:"+position+";text:"+recyclerHolder.content.getText());
+			}
+		});
 	}
 }
