@@ -15,10 +15,10 @@
         app:titleTextAppearance="@style/ToolBarTitileStyle" >
     </android.support.v7.widget.Toolbar>
 
-    <FrameLayout
-        android:id="@+id/fragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_item"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
