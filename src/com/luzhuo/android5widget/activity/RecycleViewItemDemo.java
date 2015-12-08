@@ -71,7 +71,7 @@ public class RecycleViewItemDemo extends FragmentActivity {
 	        layoutManager.setOrientation(extra==2 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
 	        recycle_item.setHasFixedSize(true); // true:不允许Adapter改变RecyclerView的大小
-	        recycle_item.setAdapter(new GridAdapter(this,extra == 3 ? true : false));
+	        recycle_item.setAdapter(new GridAdapter(this));
 	        return;
 		}
 		
