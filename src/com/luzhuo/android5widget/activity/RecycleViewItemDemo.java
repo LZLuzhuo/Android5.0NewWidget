@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.luzhuo.android5widget.R;
 import com.luzhuo.android5widget.adapter.GridAdapter;
 import com.luzhuo.android5widget.adapter.ListAdapter;
+import com.luzhuo.android5widget.adapter.StaggeredGridAdapter;
 
 /**
  * =================================================
@@ -59,16 +60,16 @@ public class RecycleViewItemDemo extends FragmentActivity {
 		// 列表布局
 		if(extra == 0 || extra == 1){
 	        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-	        layoutManager.setOrientation(extra == 0 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
+	        layoutManager.setOrientation(extra == 1 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
-	        recycle_item.setAdapter(new ListAdapter(this,extra == 1 ? true : false));
+	        recycle_item.setAdapter(new ListAdapter(this,extra == 0 ? true : false));
 			return;
 		}
 		
 		// 网格布局
 		if(extra == 2 || extra == 3){
 			GridLayoutManager layoutManager = new GridLayoutManager(this, 4); //第二个参数是列数
-	        layoutManager.setOrientation(extra==2 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
+	        layoutManager.setOrientation(extra==3 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
 	        recycle_item.setHasFixedSize(true); // true:不允许Adapter改变RecyclerView的大小
 	        recycle_item.setAdapter(new GridAdapter(this));
@@ -78,9 +79,10 @@ public class RecycleViewItemDemo extends FragmentActivity {
 		//瀑布流布局
 		if(extra == 4 || extra == 5){
 			// 第一个参数:列数;第二个参数排列方式
-//	        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,extra==4 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
-//	        recycle_item.setLayoutManager(layoutManager);
-////	        recycle_item.setAdapter(new StaggeredGridAdapter(this));
+	        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,extra==5 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
+	        recycle_item.setLayoutManager(layoutManager);
+	        recycle_item.setAdapter(new StaggeredGridAdapter(this,extra == 4 ? true : false));
+	        return;
 		}
 	}
 }
