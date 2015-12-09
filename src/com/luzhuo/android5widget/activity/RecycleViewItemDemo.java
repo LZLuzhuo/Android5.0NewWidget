@@ -60,7 +60,7 @@ public class RecycleViewItemDemo extends FragmentActivity {
 		// 列表布局
 		if(extra == 0 || extra == 1){
 	        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-	        layoutManager.setOrientation(extra == 1 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
+	        layoutManager.setOrientation(extra == 1 ? RecyclerView.HORIZONTAL : RecyclerView.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
 	        recycle_item.setAdapter(new ListAdapter(this,extra == 0 ? true : false));
 			return;
@@ -69,7 +69,7 @@ public class RecycleViewItemDemo extends FragmentActivity {
 		// 网格布局
 		if(extra == 2 || extra == 3){
 			GridLayoutManager layoutManager = new GridLayoutManager(this, 4); //第二个参数是列数
-	        layoutManager.setOrientation(extra==3 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
+	        layoutManager.setOrientation(extra==3 ? RecyclerView.HORIZONTAL : RecyclerView.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
 	        recycle_item.setHasFixedSize(true); // true:不允许Adapter改变RecyclerView的大小
 	        recycle_item.setAdapter(new GridAdapter(this));
@@ -79,7 +79,7 @@ public class RecycleViewItemDemo extends FragmentActivity {
 		//瀑布流布局
 		if(extra == 4 || extra == 5){
 			// 第一个参数:列数;第二个参数排列方式
-	        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,extra==5 ? LinearLayoutManager.HORIZONTAL : LinearLayoutManager.VERTICAL);
+	        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,extra==5 ? RecyclerView.HORIZONTAL : RecyclerView.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
 	        recycle_item.setAdapter(new StaggeredGridAdapter(this,extra == 4 ? true : false));
 	        return;

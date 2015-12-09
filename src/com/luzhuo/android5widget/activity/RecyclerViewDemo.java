@@ -43,7 +43,7 @@ public class RecyclerViewDemo extends Activity {
 
 	private void initData() {
 		LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-		layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+		layoutManager.setOrientation(RecyclerView.VERTICAL);
 		recycle.setLayoutManager(layoutManager);
 		RecycleAdapter adapter = new RecycleAdapter(this);
 		recycle.setAdapter(adapter);
