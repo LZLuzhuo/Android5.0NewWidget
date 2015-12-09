@@ -8,7 +8,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
 
 import com.luzhuo.android5widget.R;
 import com.luzhuo.android5widget.adapter.GridAdapter;
@@ -68,7 +67,7 @@ public class RecycleViewItemDemo extends FragmentActivity {
 		
 		// 网格布局
 		if(extra == 2 || extra == 3){
-			GridLayoutManager layoutManager = new GridLayoutManager(this, 4); //第二个参数是列数
+			GridLayoutManager layoutManager = new GridLayoutManager(this, 3); //第二个参数是列数
 	        layoutManager.setOrientation(extra==3 ? RecyclerView.HORIZONTAL : RecyclerView.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
 	        recycle_item.setAdapter(new GridAdapter(this,extra == 2 ? true : false));
