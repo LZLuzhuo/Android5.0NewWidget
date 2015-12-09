@@ -26,6 +26,7 @@
         <activity android:name="com.luzhuo.android5widget.activity.CardViewDemo"/>
         <activity android:name="com.luzhuo.android5widget.activity.RecyclerViewDemo"/>
         <activity android:name="com.luzhuo.android5widget.activity.RecycleViewItemDemo"/>
+        <activity android:name="com.luzhuo.android5widget.activity.SwipeRefreshLayoutDemo"/>
     </application>
 
 </manifest>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res/com.luzhuo.android5widget"
     android:id="@+id/item_relative"
     android:layout_width="80dp"
-    android:layout_height="80dp" >
+    android:layout_height="100dp" >
 
     <android.support.v7.widget.CardView
         android:layout_width="fill_parent"

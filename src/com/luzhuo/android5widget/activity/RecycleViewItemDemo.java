@@ -71,7 +71,7 @@ public class RecycleViewItemDemo extends FragmentActivity {
 			GridLayoutManager layoutManager = new GridLayoutManager(this, 4); //第二个参数是列数
 	        layoutManager.setOrientation(extra==3 ? RecyclerView.HORIZONTAL : RecyclerView.VERTICAL);
 	        recycle_item.setLayoutManager(layoutManager);
-	        recycle_item.setAdapter(new GridAdapter(this));
+	        recycle_item.setAdapter(new GridAdapter(this,extra == 2 ? true : false));
 	        return;
 		}
 		

@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.SwipeRefreshLayout:
-			System.out.println("SwipeRefreshLayout");
+			intent = new Intent(this, SwipeRefreshLayoutDemo.class);
+			startActivity(intent);
 			break;
 		}
 	}

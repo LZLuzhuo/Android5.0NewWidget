@@ -17,14 +17,16 @@ import com.luzhuo.android5widget.R;
 
 public class GridAdapter extends RecyclerView.Adapter<ViewHolder> {
 	private Context context;
+	private boolean isVERTICAL;
 	
-	public GridAdapter(Context context) {
+	public GridAdapter(Context context,boolean isVERTICAL) {
 		this.context = context;
+		this.isVERTICAL = isVERTICAL;
 	}
 
 	@Override
 	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View view = LayoutInflater.from(context).inflate(R.layout.item_grid, parent, false);
+		View view = LayoutInflater.from(context).inflate(isVERTICAL ? R.layout.item_grid : R.layout.item_grid_h, parent, false);
 		return new RecyclerHolder(view);
 	}
 
