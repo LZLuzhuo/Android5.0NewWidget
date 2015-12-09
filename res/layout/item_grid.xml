@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.luzhuo.android5widget"
     android:id="@+id/item_relative"
-    android:layout_width="80dp"
-    android:layout_height="100dp" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <android.support.v7.widget.CardView
         android:layout_width="fill_parent"
@@ -21,18 +21,17 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_weight="1"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@drawable/background" />
 
             <TextView
                 android:id="@+id/text"
                 style="@style/ToolBarSubTitileStyle"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="center_horizontal"
                 android:text="position:0" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
