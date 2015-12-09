@@ -1,7 +1,8 @@
 package com.luzhuo.android5widget.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -24,7 +25,8 @@ import com.luzhuo.android5widget.R;
  * 
  * =================================================
  **/
-public class ToolBarDemo extends Activity implements OnClickListener {
+public class ToolBarDemo extends AppCompatActivity implements OnClickListener {
+	private Toolbar toolbar;
 	private ImageView back;
 
 	@Override
@@ -32,11 +34,19 @@ public class ToolBarDemo extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_toolbar);
 		initView();
+		initData();
 	}
 
 	private void initView() {
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		back = (ImageView) findViewById(R.id.back);
+		
 		back.setOnClickListener(this);
+	}
+	
+	private void initData() {
+		// 设置ActionBar
+		setSupportActionBar(toolbar);
 	}
 
 	@Override

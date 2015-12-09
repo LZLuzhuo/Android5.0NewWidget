@@ -7,12 +7,15 @@ import com.luzhuo.android5widget.R.layout;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
+	private Toolbar toolbar;
 	private CardView toolBar;
 	private CardView cardView;
 	private CardView recyclerView;
@@ -23,9 +26,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		initView();
+		initData();
 	}
 
 	private void initView() {
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolBar = (CardView) findViewById(R.id.ToolBar);
 		cardView = (CardView) findViewById(R.id.CardView);
 		recyclerView = (CardView) findViewById(R.id.RecyclerView);
@@ -35,6 +40,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		cardView.setOnClickListener(this);
 		recyclerView.setOnClickListener(this);
 		swipeRefreshLayout.setOnClickListener(this);
+	}
+	
+	private void initData() {
+		setSupportActionBar(toolbar);
 	}
 
 	@Override
