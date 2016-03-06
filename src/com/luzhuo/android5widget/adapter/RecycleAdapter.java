@@ -40,7 +40,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
 	
 	public class RecyclerHolder extends RecyclerView.ViewHolder implements OnClickListener{
 		public TextView content;
-		public int position;
 		private CardView cardview;
 
 		public RecyclerHolder(View itemView) {
@@ -51,13 +50,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
 		}
 		
 		public void setData(int position) {
-			this.position = position;
 			content.setText(contents[position]);
         }
 
 		@Override
 		public void onClick(View v) {
-			if(onItemClickListener != null) onItemClickListener.onItemClick(this, position);
+			if(onItemClickListener != null) onItemClickListener.onItemClick(this, getLayoutPosition());
 		}
 	}
 	
