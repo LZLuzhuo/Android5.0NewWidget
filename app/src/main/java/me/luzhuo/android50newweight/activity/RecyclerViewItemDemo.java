@@ -38,7 +38,7 @@ import me.luzhuo.android50newweight.utils.Utils;
  * <p>
  * Creation Date: 2015/12/7 16:48:50
  * <p>
- * Description: 对纵向/横向列表,纵向/横向网格,纵向/横向瀑布流的演示用的布局,详细代码请{@link RecycleViewItemDemo}.
+ * Description: 对纵向/横向列表,纵向/横向网格,纵向/横向瀑布流的演示用的布局,详细代码请{@link RecyclerViewItemDemo}.
  * <p>
  * Revision History: 1. 2016.12.16 修改适配器的数据获取方式, 使其更符合规范.
  * <p>
@@ -46,7 +46,7 @@ import me.luzhuo.android50newweight.utils.Utils;
  * <p>
  * =================================================
  **/
-public class RecycleViewItemDemo extends AppCompatActivity {
+public class RecyclerViewItemDemo extends AppCompatActivity {
 	private Toolbar recycle_toolbar;
 	private int extra;
 	private RecyclerView recycle_item;
@@ -54,7 +54,7 @@ public class RecycleViewItemDemo extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_recycleview_item);
+		setContentView(R.layout.activity_recyclerview_item);
 		extra = getIntent().getIntExtra("position", -1);
 		initView();
 		initData();

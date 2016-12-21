@@ -19,7 +19,7 @@
         <activity android:name=".activity.ToolBarDemo"/>
         <activity android:name=".activity.CardViewDemo"/>
         <activity android:name=".activity.RecyclerViewDemo"/>
-        <activity android:name=".activity.RecycleViewItemDemo"/>
+        <activity android:name=".activity.RecyclerViewItemDemo"/>
         <activity android:name=".activity.SwipeRefreshLayoutDemo"/>
     </application>
 

@@ -49,7 +49,7 @@ public class RecyclerViewDemo extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_recycleview);
+		setContentView(R.layout.activity_recyclerview);
 		initView();
 		initData();
 	}
@@ -69,7 +69,7 @@ public class RecyclerViewDemo extends AppCompatActivity {
 			@Override
 			public void onItemClick(int position) {
 				// 打开子条目演示活动
-				Intent intent = new Intent(RecyclerViewDemo.this, RecycleViewItemDemo.class);
+				Intent intent = new Intent(RecyclerViewDemo.this, RecyclerViewItemDemo.class);
 				intent.putExtra("position", position);
 				startActivity(intent);
 			}
