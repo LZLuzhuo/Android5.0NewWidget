@@ -12,13 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.android50newweight.activity;
+package me.luzhuo.android50newwidget.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
-import me.luzhuo.android50newweight.R;
+import me.luzhuo.android50newwidget.R;
 
 /**
  * =================================================
@@ -27,34 +26,20 @@ import me.luzhuo.android50newweight.R;
  * <p>
  * Version: 1.0
  * <p>
- * Creation Date: 2015/12/5 22:54:14
+ * Creation Date: 2015/12/6 20:12:33
  * <p>
- * Description: ToolBar的案例
+ * Description: 卡片View的案例
  * <p>
- * Revision History:
+ * Revision History: 1. 2016.12.16 删除第一个Toolbar的返回按钮, 使其更真实.
  * <p>
  * Copyright: Copyright 2016 Luzhuo. All rights reserved.
  * <p>
  * =================================================
  **/
-public class ToolBarDemo extends AppCompatActivity {
-	private Toolbar toolbar;
-
+public class CardViewDemo extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_toolbar);
-		initView();
-		initData();
+		setContentView(R.layout.activity_cardview);
 	}
-
-	private void initView() {
-		toolbar = (Toolbar) findViewById(R.id.toolbar);
-	}
-	
-	private void initData() {
-		// 设置ActionBar
-		setSupportActionBar(toolbar);
-	}
-
 }

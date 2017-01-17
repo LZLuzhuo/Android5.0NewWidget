@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.android50newweight.adapter;
+package me.luzhuo.android50newwidget.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -24,7 +24,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import me.luzhuo.android50newweight.R;
+import me.luzhuo.android50newwidget.R;
 
 public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
 	private String[] contents;

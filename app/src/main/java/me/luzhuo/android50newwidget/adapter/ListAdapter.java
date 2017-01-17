@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.android50newweight.adapter;
+package me.luzhuo.android50newwidget.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -25,14 +25,14 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-import me.luzhuo.android50newweight.R;
+import me.luzhuo.android50newwidget.R;
 
-public class GridAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
 	private Context context;
 	private boolean isVertical;
 	private int[] imageContents;
-	
-	public GridAdapter(Context context, boolean isVertical, int[] imageContents) {
+
+	public ListAdapter(Context context, boolean isVertical, int[] imageContents) {
 		this.context = context;
 		this.isVertical = isVertical;
 		this.imageContents = imageContents;
@@ -40,7 +40,7 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> {
 
 	@Override
 	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View view = LayoutInflater.from(context).inflate(isVertical ? R.layout.item_grid : R.layout.item_grid_h, parent, false);
+		View view = LayoutInflater.from(context).inflate(isVertical ? R.layout.item_list : R.layout.item_list_h, parent, false);
 		return new RecyclerHolder(view);
 	}
 
@@ -66,9 +66,8 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> {
 		}
 
 		public void setData(int position) {
-			text.setText("position:" + position);
+			text.setText("position:"+position);
 			image.setImageResource(imageContents[random.nextInt(imageContents.length)]);
 		}
 	}
-
 }

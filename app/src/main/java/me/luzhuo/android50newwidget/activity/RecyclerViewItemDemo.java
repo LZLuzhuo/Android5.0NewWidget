@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.android50newweight.activity;
+package me.luzhuo.android50newwidget.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,11 +23,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 
-import me.luzhuo.android50newweight.R;
-import me.luzhuo.android50newweight.adapter.GridAdapter;
-import me.luzhuo.android50newweight.adapter.ListAdapter;
-import me.luzhuo.android50newweight.adapter.StaggeredGridAdapter;
-import me.luzhuo.android50newweight.utils.Utils;
+import me.luzhuo.android50newwidget.R;
+import me.luzhuo.android50newwidget.adapter.GridAdapter;
+import me.luzhuo.android50newwidget.adapter.ListAdapter;
+import me.luzhuo.android50newwidget.adapter.StaggeredGridAdapter;
+import me.luzhuo.android50newwidget.utils.Utils;
 
 /**
  * =================================================

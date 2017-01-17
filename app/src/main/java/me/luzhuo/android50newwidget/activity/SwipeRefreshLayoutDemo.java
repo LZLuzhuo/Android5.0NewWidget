@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.android50newweight.activity;
+package me.luzhuo.android50newwidget.activity;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -21,9 +21,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import me.luzhuo.android50newweight.R;
-import me.luzhuo.android50newweight.adapter.GridAdapter;
-import me.luzhuo.android50newweight.utils.Utils;
+import me.luzhuo.android50newwidget.R;
+import me.luzhuo.android50newwidget.adapter.GridAdapter;
+import me.luzhuo.android50newwidget.utils.Utils;
 
 /**
  * =================================================

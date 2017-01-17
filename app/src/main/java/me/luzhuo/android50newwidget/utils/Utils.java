@@ -12,12 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.android50newweight.utils;
+package me.luzhuo.android50newwidget.utils;
 
 import android.content.Context;
 import android.widget.Toast;
 
-import me.luzhuo.android50newweight.R;
+import me.luzhuo.android50newwidget.R;
 
 public class Utils {
 	/**

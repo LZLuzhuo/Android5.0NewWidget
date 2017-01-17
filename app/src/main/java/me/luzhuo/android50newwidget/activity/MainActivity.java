@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.android50newweight.activity;
+package me.luzhuo.android50newwidget.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import me.luzhuo.android50newweight.R;
+import me.luzhuo.android50newwidget.R;
 
 /**
  * =================================================
