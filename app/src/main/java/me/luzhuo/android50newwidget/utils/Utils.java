@@ -14,7 +14,9 @@
  */
 package me.luzhuo.android50newwidget.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.widget.Toast;
 
 import me.luzhuo.android50newwidget.R;
@@ -30,7 +32,7 @@ public class Utils {
 	/**
 	 * 文本资源
 	 */
-	public static final String[] TEXTCONTENTS = new String[]{"纵向列表","横向列表","纵向网格","横向网格","纵向瀑布流","横向瀑布流"};
+	public static final String[] TEXTCONTENTS = new String[]{"纵向列表","横向列表","纵向网格","横向网格","纵向瀑布流","横向瀑布流","自动多页回位","自动一页回位","Linear+Header","Grid+Header","StaggeredGrid+Header"};
 
 	private static Toast quickToast;
 	/**
@@ -43,5 +45,44 @@ public class Utils {
 			quickToast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
 		quickToast.setText(msg);
 		quickToast.show();
+	}
+
+	/**
+	 * RecyclerView滚到底部的监听<br>
+	 * 使用: addOnScrollListener onScrollStateChanged if (isVisBottom(recyclerView)) { }
+	 * @param recyclerView
+	 * @return
+	 */
+	public static boolean isVisBottom(android.support.v7.widget.RecyclerView recyclerView){
+		android.support.v7.widget.LinearLayoutManager layoutManager = (android.support.v7.widget.LinearLayoutManager) recyclerView.getLayoutManager();
+		int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
+		int visibleItemCount = layoutManager.getChildCount();
+		int totalItemCount = layoutManager.getItemCount();
+		int state = recyclerView.getScrollState();
+		if(visibleItemCount > 0 && lastVisibleItemPosition == totalItemCount - 1 && state == recyclerView.SCROLL_STATE_IDLE){
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	/**
+	 * 获取屏幕的宽
+	 */
+	public static int getDisplayWidth(Activity activity){
+		// 获取屏幕的宽高
+		DisplayMetrics displayMetrics = new DisplayMetrics();
+		activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+		return displayMetrics.widthPixels;
+	}
+
+	/**
+	 * 获取屏幕的高
+	 */
+	public static int getDisplayHeight(Activity activity){
+		// 获取屏幕的宽高
+		DisplayMetrics displayMetrics = new DisplayMetrics();
+		activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+		return displayMetrics.heightPixels;
 	}
 }

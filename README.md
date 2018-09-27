@@ -9,3 +9,7 @@
 ![](/Screenshot/RecyclerView5.gif)
 ![](/Screenshot/RecyclerView7.gif)
 ![](/Screenshot/SwipeRefreshLayout1.gif)
+...
+
+## update
+ - 2018.9.28: 新增自动回位 和 Header 代码.

@@ -15,32 +15,31 @@
 package me.luzhuo.android50newwidget.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 import me.luzhuo.android50newwidget.R;
-import me.luzhuo.android50newwidget.activity.RecyclerViewItemDemo;
 
-public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
-	private String[] contents;
+public class BigListAdapter extends RecyclerView.Adapter<ViewHolder> {
 	private Context context;
+	private int[] imageContents;
 
-	public RecycleAdapter(Context context, String[] contents) {
+	public BigListAdapter(Context context, int[] imageContents) {
 		this.context = context;
-		this.contents = contents;
+		this.imageContents = imageContents;
 	}
-	
+
 	@Override
 	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_recycler_menu, parent, false);
-        return new RecyclerHolder(view);
+		View view = LayoutInflater.from(context).inflate(R.layout.item_list_big, parent, false);
+		return new RecyclerHolder(view);
 	}
 
 	@Override
@@ -50,30 +49,23 @@ public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder>{
 
 	@Override
 	public int getItemCount() {
-		return contents == null ? 0 : contents.length;
+		return imageContents == null ? 0 : 1000;
 	}
-	
-	public class RecyclerHolder extends RecyclerView.ViewHolder implements OnClickListener{
-		public TextView content;
-		private CardView cardview;
+
+	class RecyclerHolder extends ViewHolder {
+		private TextView text;
+		private ImageView image;
+		private Random random = new Random();
 
 		public RecyclerHolder(View itemView) {
 			super(itemView);
-			content = (TextView) itemView.findViewById(R.id.item_content);
-			cardview = (CardView) itemView.findViewById(R.id.item_cardview);
-			cardview.setOnClickListener(this);
+			text = (TextView) itemView.findViewById(R.id.text);
+			image = (ImageView) itemView.findViewById(R.id.image);
 		}
-		
-		public void setData(int position) {
-			content.setText(contents[position]);
-        }
 
-		@Override
-		public void onClick(View v) {
-			// 打开子条目演示活动
-			Intent intent = new Intent(context, RecyclerViewItemDemo.class);
-			intent.putExtra("position", getLayoutPosition());
-			context.startActivity(intent);
+		public void setData(int position) {
+			text.setText("position:"+position);
+			image.setImageResource(imageContents[random.nextInt(imageContents.length)]);
 		}
 	}
 }

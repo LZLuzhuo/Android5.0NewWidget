@@ -14,7 +14,6 @@
  */
 package me.luzhuo.android50newwidget.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -37,7 +36,8 @@ import me.luzhuo.android50newwidget.utils.Utils;
  * <p>
  * Revision History:
  * 			1. 2016.12.16 修改了 {@code RecycleAdapter.OnItemClickListener} 接口中的方法接收的参数不规范.<br>
- *     		2. 2016.12.16 修改了 {@code RecycleAdapter} 的数据存放位置, 使其更符合日常规范.
+ *     		2. 2016.12.16 修改了 {@code RecycleAdapter} 的数据存放位置, 使其更符合日常规范.<br>
+ *     	    3. 2018.9.27 删除了 	{@code RecycleAdapter.OnItemClickListener} 接口回调
  * <p>
  * Copyright: Copyright 2016 Luzhuo. All rights reserved.
  * <p>
@@ -64,15 +64,5 @@ public class RecyclerViewDemo extends AppCompatActivity {
 		recycle.setLayoutManager(layoutManager);
 		RecycleAdapter adapter = new RecycleAdapter(this, Utils.TEXTCONTENTS);
 		recycle.setAdapter(adapter);
-		
-		adapter.setOnItemClickListener(new RecycleAdapter.OnItemClickListener() {
-			@Override
-			public void onItemClick(int position) {
-				// 打开子条目演示活动
-				Intent intent = new Intent(RecyclerViewDemo.this, RecyclerViewItemDemo.class);
-				intent.putExtra("position", position);
-				startActivity(intent);
-			}
-		});
 	}
 }
